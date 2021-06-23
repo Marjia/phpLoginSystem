@@ -99,7 +99,7 @@ $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
  mysqli_stmt_close($stmt);
 
- header('location: /singup.php?error=none');
+ header('location: /login.php?error=none');
  exit();
 
 }
@@ -121,6 +121,8 @@ function emptyInputsLogin($username, $pwd){
 function loginUser($conn, $username, $pwd){
   $uidExists = uidExists($conn, $username, $username);
 
+  //print_r($uidExists);
+
   if ($uidExists === false) {
     header('location: /login.php?error=wronglogin');
     exit();
@@ -136,7 +138,11 @@ function loginUser($conn, $username, $pwd){
   elseif ($checkPWD === true) {
     session_start();
     $_SESSION["usersId"] = $uidExists["usersId"];
+    $_SESSION["usersname"] = $uidExists["usersName"];
     $_SESSION["usersuid"] = $uidExists["usersUid"];
+    $_SESSION["usersemail"] = $uidExists["usersEmail"];
+
+    //echo $_SESSION["usersname"]." ".$_SESSION["usersuid"]." ".$_SESSION["usersemail"];
 
     header('location: /index.php');
     exit();

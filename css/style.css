@@ -73,8 +73,7 @@ main{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
-  padding-left: 40%;
-  padding-right: 40%;
+
   margin-top: 1rem;
 }
 .card-single{
@@ -89,7 +88,59 @@ main{
   float: center;
 }
 
-.card-single input{
-  margin: 4px;
-  padding: 3px;
+.container{
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+form{
+  padding: 30px;
+}
+h2{
+  color: #fff;
+  font-family: monospace;
+  font-size: 24px;
+  background: #262626;
+  padding: 15px 29px;
+  border: 1px solid #000;
+  font-weight: 200;
+  text-align: center;
+}
+input{
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 4px;
+  border: none;
+  font-size: 14px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.25em;
+  color: #000;
+  
+}
+input:focus{
+  outline: none;
+}
+.button{
+  background: #1fb5f5;
+  border: 1px solid #1fb5f5;
+  padding: .5em 2em;
+  color: #fff;
+  margin-right: .5em;
+}
+.button:hover{
+  cursor: pointer;
+}
+.button:active{
+  background: #1fb5f5;
+  box-shadow: inset 0px 1px 1px #000;
+}
+.button:focus{
+  outline: none;
 }
